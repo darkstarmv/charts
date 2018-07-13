@@ -51,6 +51,7 @@ rules:
     - ""
     resources:
       - pods
+      - jobs
       - services
       - replicationcontrollers
       - persistentvolumeclaims
