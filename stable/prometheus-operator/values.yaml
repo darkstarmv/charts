@@ -1192,6 +1192,29 @@ prometheus:
     minAvailable: 1
     maxUnavailable: ""
 
+  thanosIngress:
+    enabled: false
+    annotations: {}
+    labels: {}
+    servicePort: 10901
+    ## Hosts must be provided if Ingress is enabled.
+    ##
+    hosts: []
+      # - thanos-gateway.domain.com
+
+    ## Paths to use for ingress rules
+    ##
+    paths: []
+    # - /
+
+    ## TLS configuration for Alertmanager Ingress
+    ## Secret must be manually created in the namespace
+    ##
+    tls: []
+    # - secretName: thanos-gateway-tls
+    #   hosts:
+    #   - thanos-gateway.domain.com
+
   ingress:
     enabled: false
     annotations: {}
@@ -1244,7 +1267,6 @@ prometheus:
     #   target_label: nodename
     #   replacement: $1
     #   action: replace
-
   ## Settings affecting prometheusSpec
   ## ref: https://github.com/coreos/prometheus-operator/blob/master/Documentation/api.md#prometheusspec
   ##
