@@ -1589,6 +1589,10 @@ prometheus:
     ##
     apiserverConfig: {}
 
+    ## Prometheus global default scape timeout - how long until a scrape request times out
+    ##
+    scrapeTimeout: ""
+
     ## Interval between consecutive scrapes.
     ##
     scrapeInterval: ""
